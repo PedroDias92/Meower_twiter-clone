@@ -88,35 +88,35 @@ With the following features:
 
 ## Front-end
 
-* [] Log out created Mew after POST request
-* [] Show the form
-* [] Hide loading spinner
+* [x] Log out created Mew after POST request
+* [x] Show the form
+* [x] Hide loading spinner
 
 ## Back-end
 
-* [] GET /mews
-  * [] Respond with mews from DB
-* [] Retrieve data from a database on the Server
+* [x] GET /mews
+  * [x] Respond with mews from DB
+* [x] Retrieve data from a database on the Server
 
 ## Front-end
 
-* [] fetch GET /mews
-  * [] Iterate over array
-  * [] Append each to page
-  * [] Reverse before appending
-  * [] Show the form
-  * [] Hide loading spinner
-* [ ] fetch GET /mews after creating a mew
-* [] Retrieve data from a server on the client using Fetch
-* [] Hide/Show elements on the client
-* [] Add elements to the page on the client
+* [x] fetch GET /mews
+  * [x] Iterate over array
+  * [x] Append each to page
+  * [x] Reverse before appending
+  * [x] Show the form
+  * [x] Hide loading spinner
+* [x] fetch GET /mews after creating a mew
+* [x] Retrieve data from a server on the client using Fetch
+* [x] Hide/Show elements on the client
+* [x] Add elements to the page on the client
 
 ## Back-end
 
-* [ ] npm install bad-words
-  * [ ] Use filter before inserting into DB
-* [ ] npm install epress-rate-limit
-  * [ ] Limit to 1 request every 15 seconds
+* [x] npm install bad-words
+  * [x] Use filter before inserting into DB
+* [x] npm install express-rate-limit
+  * [x] Limit to 1 request every 30 seconds
 
 ## Deploy
 

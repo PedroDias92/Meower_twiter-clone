@@ -34,7 +34,10 @@ form.addEventListener('submit', (event)=>{
       .then(createdMew => {
           console.log(createdMew)
           form.reset();
-          form.style.display = '';
+          //hides the form for 30 sec
+          setTimeout(()=>{
+            form.style.display = '';
+          },30000);
           loadingElement.style.display = 'none';
           listAllMews();
           

@@ -56,33 +56,35 @@ With the following features:
   * [x] log out req.body
 
 
+
 ## Front-end
 
-* [] fetch POST /mews with form data
-* [] See the CORS error and revel in this moment
-* [] Send user input from the client with fetch to the server
+* [x] fetch POST /mews with form data
+* [x] npm i cors      because of the browser error 'no-cors'
+* [x] Send user input from the client with fetch to the server
 
 ## Back-end
 
-* [] npm install cors
-* [] Make sure the server is recieving the data
-* [] Add JSON body parser middleware
-* [] Validate name and content
-  * [] Must be a string
-  * [] Cannot be empty
-* [] If not valid
-  * [] Error code 422
-  * [] Invalid mew, must contain name and content
-* [] Setup DB Connection
-  * [] npm install monk
-  * [] connect to db
-  * [] create document collection (mews)
-* [] If Valid
-  * [] Create mew object with
-    * [] name, content, created_date
-  * [] Insert into DB
-  * [] Respond with created mew object
-* [] Store data in a database
+* [x] npm install cors
+* [x] Make sure the server is recieving the data
+* [x] Add JSON body parser middleware
+* [x] Validate name and content
+  * [x] Must be a string
+  * [x] Cannot be empty
+* [x] If not valid
+  * [x] Error code 422
+  * [x] Invalid mew, must contain name and content
+* [x] Setup DB Connection
+  * [x] > mongod      start mongobd in new terminal, test with robo3t
+  * [x] npm install monk
+  * [x] connect to db
+  * [x] create document collection (mews)
+* [x] If Valid
+  * [x] Create mew object with
+    * [x] name, content, created_date
+  * [x] Insert into DB
+  * [x] Respond with created mew object
+* [x] Store data in a database
 
 ## Front-end
 

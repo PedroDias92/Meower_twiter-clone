@@ -6,3 +6,26 @@
     width: 50%;
     margin: auto;
 }
+
+.mews{
+    width: 50%;
+    margin: auto;
+}
+
+.header{
+    background-color: cornsilk;
+    margin-bottom: 5px;
+    
+}
+
+.contents{
+    background-color: whitesmoke;
+    margin-left: 15px;
+    margin-bottom: 0px
+}
+.date{
+    background-color: whitesmoke;
+    text-align: right;
+    margin-left: 15px;
+
+}

@@ -7,7 +7,9 @@ const rateLimit = require("express-rate-limit");
 
 const app = express();
 
-const db = monk('localhost/meower');
+//const db = monk('mongodb+srv://newUser:123abc@clusterzargas-qdi0f.gcp.mongodb.net/test?retryWrites=true' || 'localhost/meower');  //talks with one or another
+const db = monk('localhost/meower');  //talks with one or another
+
 const mews = db.get('mews');
 filter = new Filter();
 

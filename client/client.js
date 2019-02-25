@@ -3,7 +3,8 @@ console.log("ola mundo")
 const form = document.querySelector('form');
 const loadingElement = document.querySelector('.loading');
 const mewsElement = document.querySelector('.mews')
-const API_URL = 'http://localhost:5000/mews';
+//const API_URL = window.location.hostname ==="localhost" ? 'http://localhost:5000/mews' : 'meower-api-pedro.now.sh'
+const API_URL = 'http://localhost:5000/mews'
 
 //showing all mews
 loadingElement.style.display = ''

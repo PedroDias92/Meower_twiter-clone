@@ -9,19 +9,23 @@ const API_URL = 'http://localhost:5000/mews' ;
 
 let skip=0;
 let limit=5;
-
+let loading = false;
+let finished = false;
 
 
 window.addEventListener("scroll",()=>{
     console.log("scrolling...")
-    const top = loadMoreElement.offsetTop;
-    console.log(top)
+    const rect = loadMoreElement.getBoundingClientRect();
+    console.log(rect);
+    if(rect.top < window.innerHeight && !loading && !finished){
+        loadMore();
+    }
 });
 
 function loadMore(){
     console.log("scroling...")
-  //  skip +=limit;
-  //  listAllMews(false);
+    skip +=limit;
+    listAllMews(false);
 }
 
 
@@ -65,6 +69,7 @@ form.addEventListener('submit', (event)=>{
 })
 
 function listAllMews(reset= true){
+    loading=true;
     if(reset){
         mewsElement.innerHTML='';
         skip =0;
@@ -99,8 +104,10 @@ function listAllMews(reset= true){
             });
             if(!result.meta.has_more){
                 loadMoreElement.style.visibility="hidden";
+                finished = true;
             }else{
                 loadMoreElement.style.visibility="visible";
             }
+            loading=false;
         });
 }

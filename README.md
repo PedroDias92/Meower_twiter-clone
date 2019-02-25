@@ -120,11 +120,11 @@ With the following features:
 
 ## Deploy
 
-* [] Deploy server with now
-  * [] Setup environment variables
-    * [] Database connection
+* [x] Deploy server with now
+  * [x] Setup environment variables
+    * [x] Database connection
       * process.env.MONGO_URI
-  * [] Show mlab
+  * [x] Show mlab
   * [ ] Deploy with environment variable
     * now -e MONGO_URI=@meower-db
   * [ ] Add alias
@@ -143,3 +143,14 @@ With the following features:
 * Hashtags
 * User @mentions
 * Realtime feed of mews
+
+
+##next
+* server
+* [x] pagination
+  * [x] skip,limit,sort from query
+
+* client
+* [x] skip and limit variables
+* [x] Load more button
+* [x] Scroll page to lasted mew 

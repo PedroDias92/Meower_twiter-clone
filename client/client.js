@@ -3,8 +3,27 @@ console.log("ola mundo")
 const form = document.querySelector('form');
 const loadingElement = document.querySelector('.loading');
 const mewsElement = document.querySelector('.mews')
+const loadMoreElement = document.querySelector('#loadMoreElement')
 //const API_URL = window.location.hostname ==="localhost" ? 'http://localhost:5000/mews' : 'meower-api-pedro.now.sh'
-const API_URL = 'http://localhost:5000/mews'
+const API_URL = 'http://localhost:5000/mews' ;
+
+let skip=0;
+let limit=5;
+
+
+
+window.addEventListener("scroll",()=>{
+    console.log("scrolling...")
+    const top = loadMoreElement.offsetTop;
+    console.log(top)
+});
+
+function loadMore(){
+    console.log("scroling...")
+  //  skip +=limit;
+  //  listAllMews(false);
+}
+
 
 //showing all mews
 loadingElement.style.display = ''
@@ -45,14 +64,19 @@ form.addEventListener('submit', (event)=>{
       })
 })
 
-function listAllMews(){
-    mewsElement.innerHTML='';  //when submit reloads all the mews
-    fetch(API_URL)
+function listAllMews(reset= true){
+    if(reset){
+        mewsElement.innerHTML='';
+        skip =0;
+    }
+    //mewsElement.innerHTML='';  //when submit reloads all the mews
+    fetch(`${API_URL}?skip=${skip}&limit=${limit}`)
         .then(response => response.json())
-        .then(mews =>{
-            console.log(mews)
-            mews.reverse();
-            mews.forEach(mew =>{
+        .then(result =>{
+            
+            console.log(result)
+            result.mews.reverse();
+            result.mews.forEach(mew =>{
                 const div = document.createElement('div');
                 
                 const header = document.createElement('h3');
@@ -73,5 +97,10 @@ function listAllMews(){
                 div.appendChild(document.createElement("hr"));
                 mewsElement.appendChild(div);
             });
+            if(!result.meta.has_more){
+                loadMoreElement.style.visibility="hidden";
+            }else{
+                loadMoreElement.style.visibility="visible";
+            }
         });
 }

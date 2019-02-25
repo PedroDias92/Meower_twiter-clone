@@ -10,8 +10,8 @@ const app = express();
 //const db = monk('mongodb+srv://newUser:123abc@clusterzargas-qdi0f.gcp.mongodb.net/test?retryWrites=true' || 'localhost/meower');  //talks with one or another
 const db = monk('localhost/meower');  //talks with one or another
 
-const mews = db.get('mews');
-filter = new Filter();
+const mews = db.get('mews'); // collection
+filter = new Filter();  // words
 
 
 
@@ -26,12 +26,37 @@ app.get('/',(req,res) =>{
     });
 });
 
-app.get('/mews',(req,res) => {
-    mews
-        .find()
-        .then(mews =>{
-            res.json(mews);
-        })
+//get all the mews
+app.get('/mews',(req,res,next) => {
+    console.log(req.query)
+    //let skip= Number(req.query.skip) || 0;
+    //let limit= Number(req.query.limit) || 10;
+    let {skip = 0,limit =10, sort='desc'} = req.query;  //  same as above...pretty cool!
+    skip= Number(skip)
+    limit= Number(limit)
+    Promise.all([ // returns a object with a count value and a array of mews
+        mews
+            .count(),
+        mews
+            .find({},{
+                skip,
+                limit,
+                sort:{
+                    created: sort === 'desc' ? -1 :1,
+                }
+            })
+    ])
+        .then(([total,mews]) =>{
+            res.json({
+                mews,   
+                meta:{
+                    total,
+                    skip,
+                    limit,
+                    has_more: total - (skip+limit) >0,
+                }
+            });
+        }).catch(next);
 })
 
 

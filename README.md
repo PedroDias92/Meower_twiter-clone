@@ -5,7 +5,7 @@ A basic twitter clone built to demonstrate the full stack 🥞 (client, server, 
 With the following features:
 
 * Cats can send a mew 😸✉️
-* Cats can see all mews that have been sent 😻🗂
+
 
 ## Objectives
 
@@ -19,7 +19,7 @@ With the following features:
 * [ ] 🙈 Hide/Show elements on the client
 * [ ] ✨ Add elements to the page on the client
 * [ ] 🚀 Deploy the client with now.sh
-* [ ] 🚀 Deploy the database with mlab
+* [ ] 🚀 Deploy the database with mongo atlas
 * [ ] 🚀 Deploy the server with now.sh
 
 ## Front-end

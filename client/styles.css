@@ -9,12 +9,14 @@
 
 .mews{
     width: 50%;
+    background-color: cornsilk;
     margin: auto;
 }
 
 .header{
     background-color: cornsilk;
     margin-bottom: 5px;
+    margin-left: 2px;
     
 }
 
